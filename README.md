@@ -1,0 +1,1 @@
+# SmartStudentPlanner2026
