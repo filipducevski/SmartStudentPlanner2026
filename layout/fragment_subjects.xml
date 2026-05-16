@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Subject count label -->
+        <TextView
+            android:id="@+id/tvSubjectCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/spacing_md"
+            android:paddingTop="@dimen/spacing_sm"
+            android:paddingBottom="@dimen/spacing_xs"
+            android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+            tools:text="Предмети: 6" />
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/spacing_xxl"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <ImageView android:layout_width="96dp" android:layout_height="96dp"
+                android:src="@drawable/ic_subjects"
+                app:tint="@color/on_surface_variant"
+                tools:ignore="ContentDescription" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/no_subjects"
+                android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/spacing_md" />
+        </LinearLayout>
+
+        <!-- Subjects list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubjects"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/spacing_md"
+            android:clipToPadding="false"
+            android:paddingBottom="140dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_subject" />
+
+    </LinearLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddSubject"
+        style="@style/Widget.SmartStudent.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
+        android:contentDescription="@string/add_subject"
+        app:srcCompat="@drawable/ic_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

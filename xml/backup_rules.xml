@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude sensitive firebase tokens from backup -->
+    <exclude domain="sharedpref" path="com.google.android.gms.appid.xml" />
+    <exclude domain="database" path="student_planner_db" />
+</full-backup-content>

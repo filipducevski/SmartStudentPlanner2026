@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Two-column landscape layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Left column: header + stats -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="@dimen/spacing_md">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Headline"
+                    tools:text="Hello, Marko 👋" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                    tools:text="Monday, 27 April" />
+
+                <!-- Stats 2x2 -->
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    app:columnCount="2"
+                    app:useDefaultMargins="true">
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartStudent.Card"
+                        android:layout_width="0dp" android:layout_height="wrap_content" app:layout_columnWeight="1">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="@dimen/spacing_md">
+                            <TextView android:id="@+id/tvPendingCount" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="24sp"
+                                android:textStyle="bold" android:textColor="@color/primary" tools:text="12" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/task_pending" android:textAppearance="@style/TextAppearance.SmartStudent.Caption" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartStudent.Card"
+                        android:layout_width="0dp" android:layout_height="wrap_content" app:layout_columnWeight="1">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="@dimen/spacing_md">
+                            <TextView android:id="@+id/tvCompletedCount" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="24sp"
+                                android:textStyle="bold" android:textColor="@color/success" tools:text="8" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/task_completed" android:textAppearance="@style/TextAppearance.SmartStudent.Caption" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartStudent.Card"
+                        android:layout_width="0dp" android:layout_height="wrap_content" app:layout_columnWeight="1">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="@dimen/spacing_md">
+                            <TextView android:id="@+id/tvSubjectCount" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="24sp"
+                                android:textStyle="bold" android:textColor="@color/secondary" tools:text="6" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/subjects" android:textAppearance="@style/TextAppearance.SmartStudent.Caption" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartStudent.Card"
+                        android:layout_width="0dp" android:layout_height="wrap_content" app:layout_columnWeight="1">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="@dimen/spacing_md">
+                            <TextView android:id="@+id/tvExamCount" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="24sp"
+                                android:textStyle="bold" android:textColor="@color/accent" tools:text="3" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/exams" android:textAppearance="@style/TextAppearance.SmartStudent.Caption" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <!-- Overdue banner -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardOverdue"
+                    style="@style/Widget.SmartStudent.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/error_light"
+                    app:strokeColor="@color/error"
+                    app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:padding="@dimen/spacing_md" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_warning" app:tint="@color/error" tools:ignore="ContentDescription" />
+                        <TextView android:id="@+id/tvOverdueCount" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_sm"
+                            android:textColor="@color/error" tools:text="2 overdue!" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Next exam -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNextExam"
+                    style="@style/Widget.SmartStudent.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/secondary_light">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="@dimen/spacing_md">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/upcoming_exams" android:textSize="@dimen/text_sm"
+                            android:textColor="@color/secondary" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvNextExamTitle" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.SmartStudent.Title"
+                            tools:text="Mathematics Final" />
+                        <TextView android:id="@+id/tvNextExamSubject" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                            tools:text="Calculus II" />
+                        <TextView android:id="@+id/tvNextExamCountdown" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="@dimen/text_sm"
+                            android:textColor="@color/secondary" android:textStyle="bold" android:layout_marginTop="4dp"
+                            tools:text="In 3 days" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Divider -->
+        <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider" />
+
+        <!-- Right column: today's tasks -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_sm">
+                <TextView android:id="@+id/tvTodayTaskCount" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Title"
+                    tools:text="Today's Tasks" />
+                <TextView android:id="@+id/tvViewAllTasks" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="@string/view_all"
+                    android:textColor="@color/primary" android:clickable="true" android:focusable="true" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayTasks"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_task" />
+
+            <LinearLayout android:id="@+id/emptyState" android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical" android:gravity="center"
+                android:visibility="gone">
+                <ImageView android:layout_width="64dp" android:layout_height="64dp"
+                    android:src="@drawable/ic_empty_tasks" app:tint="@color/on_surface_variant"
+                    tools:ignore="ContentDescription" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/no_tasks_today"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                    android:gravity="center" android:layout_marginTop="@dimen/spacing_md" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTask"
+        style="@style/Widget.SmartStudent.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/spacing_lg"
+        android:contentDescription="@string/add_task"
+        app:srcCompat="@drawable/ic_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

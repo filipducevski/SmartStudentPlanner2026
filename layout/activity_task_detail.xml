@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.SmartStudent.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="@dimen/spacing_md"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTaskTitle"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/task_title"
+                app:startIconDrawable="@drawable/ic_tasks">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Description -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDescription"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:hint="@string/task_description">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Subject spinner -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/task_subject" android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:layout_marginTop="@dimen/spacing_lg" android:layout_marginBottom="@dimen/spacing_xs" />
+            <Spinner android:id="@+id/spinnerSubject" android:layout_width="match_parent"
+                android:layout_height="52dp" android:background="@drawable/bg_spinner"
+                android:paddingHorizontal="@dimen/spacing_md" />
+
+            <!-- Due Date / Time row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="@dimen/spacing_lg">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelectDate"
+                    style="@style/Widget.SmartStudent.Button.Outlined"
+                    android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                    android:text="@string/select_date"
+                    app:icon="@drawable/ic_calendar" app:iconGravity="textStart" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelectTime"
+                    style="@style/Widget.SmartStudent.Button.Outlined"
+                    android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/select_time"
+                    app:icon="@drawable/ic_time" app:iconGravity="textStart" />
+            </LinearLayout>
+
+            <!-- Priority label -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/task_priority" android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:layout_marginTop="@dimen/spacing_lg" android:layout_marginBottom="@dimen/spacing_xs" />
+
+            <!-- Priority chips -->
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:singleSelection="true" app:selectionRequired="true">
+                <com.google.android.material.chip.Chip android:id="@+id/chipLow"
+                    style="@style/Widget.SmartStudent.Chip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/priority_low" app:chipBackgroundColor="@color/success_light"
+                    app:chipStrokeColor="@color/priority_low" />
+                <com.google.android.material.chip.Chip android:id="@+id/chipMedium"
+                    style="@style/Widget.SmartStudent.Chip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/priority_medium" app:chipBackgroundColor="@color/warning_light"
+                    app:chipStrokeColor="@color/priority_medium" android:checked="true" />
+                <com.google.android.material.chip.Chip android:id="@+id/chipHigh"
+                    style="@style/Widget.SmartStudent.Chip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/priority_high" app:chipBackgroundColor="@color/warning_light"
+                    app:chipStrokeColor="@color/priority_high" />
+                <com.google.android.material.chip.Chip android:id="@+id/chipCritical"
+                    style="@style/Widget.SmartStudent.Chip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/priority_critical" app:chipBackgroundColor="@color/error_light"
+                    app:chipStrokeColor="@color/priority_critical" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Task type label -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/task_type" android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:layout_marginTop="@dimen/spacing_lg" android:layout_marginBottom="@dimen/spacing_xs" />
+
+            <!-- Task type chips -->
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:singleSelection="true" app:selectionRequired="true">
+                    <com.google.android.material.chip.Chip android:id="@+id/chipHomework"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_homework" android:checked="true" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipProject"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_project" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipReading"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_reading" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipAssignment"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_assignment" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipLab"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_lab" />
+                    <com.google.android.material.chip.Chip android:id="@+id/chipOther"
+                        style="@style/Widget.SmartStudent.Chip"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/type_other" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- Reminder -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/task_reminder" android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:layout_marginTop="@dimen/spacing_lg" android:layout_marginBottom="@dimen/spacing_xs" />
+            <Spinner android:id="@+id/spinnerReminder" android:layout_width="match_parent"
+                android:layout_height="52dp" android:background="@drawable/bg_spinner"
+                android:paddingHorizontal="@dimen/spacing_md" />
+
+            <!-- Notes -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNotes"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:hint="@string/task_notes">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Progress bar -->
+            <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_md" android:visibility="gone" />
+
+            <!-- Save button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/Widget.SmartStudent.Button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/save"
+                android:textSize="@dimen/text_lg" />
+
+            <!-- Delete button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.SmartStudent.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:text="@string/delete_task"
+                app:strokeColor="@color/error"
+                android:textColor="@color/error"
+                android:visibility="gone" />
+
+            <Space android:layout_width="match_parent" android:layout_height="32dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

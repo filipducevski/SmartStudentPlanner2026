@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md">
+
+        <!-- Profile header card -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SmartStudent.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center"
+                android:padding="@dimen/spacing_xl">
+
+                <!-- Avatar -->
+                <TextView
+                    android:id="@+id/tvAvatarInitial"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:gravity="center"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_circle_primary"
+                    tools:text="M" />
+
+                <TextView
+                    android:id="@+id/tvDisplayName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Title"
+                    tools:text="Marko Petrov" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                    tools:text="marko@example.com" />
+
+                <!-- Provider icons -->
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginTop="@dimen/spacing_sm">
+                    <ImageView android:id="@+id/ivGoogle" android:layout_width="24dp" android:layout_height="24dp"
+                        android:src="@drawable/ic_google" android:layout_marginHorizontal="4dp"
+                        android:visibility="gone" tools:ignore="ContentDescription" />
+                    <ImageView android:id="@+id/ivFacebook" android:layout_width="24dp" android:layout_height="24dp"
+                        android:src="@drawable/ic_facebook" android:layout_marginHorizontal="4dp"
+                        android:visibility="gone" tools:ignore="ContentDescription" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Link account card (anonymous only) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLinkAccount"
+            style="@style/Widget.SmartStudent.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/primary_light"
+            tools:visibility="visible">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="@dimen/spacing_md" android:gravity="center_vertical">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@drawable/ic_link" app:tint="@color/primary"
+                    tools:ignore="ContentDescription" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="@dimen/spacing_md"
+                    android:text="@string/link_account" android:textColor="@color/primary" android:textStyle="bold" />
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_right" app:tint="@color/primary"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Settings card -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SmartStudent.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/spacing_sm">
+
+                <!-- Dark mode -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/spacing_md">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                        android:src="@drawable/ic_dark_mode" app:tint="@color/on_surface_variant"
+                        tools:ignore="ContentDescription" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="@dimen/spacing_md"
+                        android:text="@string/dark_mode"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginHorizontal="@dimen/spacing_md" />
+
+                <!-- Language -->
+                <LinearLayout android:id="@+id/cardLanguage" android:layout_width="match_parent"
+                    android:layout_height="56dp" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:paddingHorizontal="@dimen/spacing_md"
+                    android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                        android:src="@drawable/ic_language" app:tint="@color/on_surface_variant"
+                        tools:ignore="ContentDescription" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="@dimen/spacing_md"
+                        android:text="@string/change_language"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right" app:tint="@color/on_surface_variant"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- App version -->
+        <TextView
+            android:id="@+id/tvAppVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+            tools:text="App Version: 1.0.0" />
+
+        <!-- Sign out -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignOut"
+            style="@style/Widget.SmartStudent.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/sign_out"
+            app:icon="@drawable/ic_logout"
+            app:strokeColor="@color/error"
+            android:textColor="@color/error"
+            app:iconTint="@color/error" />
+
+    </LinearLayout>
+</ScrollView>

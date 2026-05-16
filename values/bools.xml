@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Phone: is_tablet = false -->
+    <bool name="is_tablet">false</bool>
+    <!-- Use single-column layout on phone -->
+    <integer name="grid_columns">1</integer>
+</resources>

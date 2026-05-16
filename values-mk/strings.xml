@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Паметен Студентски Планер</string>
+    <string name="default_notification_channel_name">Потсетници на Планерот</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Најава</string>
+    <string name="sign_up">Регистрација</string>
+    <string name="sign_out">Одјава</string>
+    <string name="email">Е-пошта</string>
+    <string name="password">Лозинка</string>
+    <string name="confirm_password">Потврди лозинка</string>
+    <string name="full_name">Целосно ime</string>
+    <string name="forgot_password">Заборавена лозинка?</string>
+    <string name="reset_password">Ресетирај лозинка</string>
+    <string name="continue_with_google">Продолжи со Google</string>
+    <string name="continue_with_facebook">Продолжи со Facebook</string>
+    <string name="continue_anonymously">Продолжи анонимно</string>
+    <string name="already_have_account">Веќе имате акаунт? Најавете се</string>
+    <string name="dont_have_account">Немате акаунт? Регистрирајте се</string>
+    <string name="or">ИЛИ</string>
+    <string name="welcome_back">Добредојде назад!</string>
+    <string name="create_account">Создај акаунт</string>
+    <string name="signing_in">Се најавувате…</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Почетна</string>
+    <string name="hello_user">Здраво, %1$s 👋</string>
+    <string name="today_schedule">Денешен распоред</string>
+    <string name="upcoming_deadlines">Претстојни рокови</string>
+    <string name="quick_stats">Брза статистика</string>
+    <string name="no_tasks_today">Нема задачи за денес. Уживај!</string>
+    <string name="tasks_due_today">%1$d задачи денес</string>
+    <string name="view_all">Прикажи сè</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Почетна</string>
+    <string name="nav_tasks">Задачи</string>
+    <string name="nav_subjects">Предмети</string>
+    <string name="nav_exams">Испити</string>
+    <string name="nav_profile">Профил</string>
+
+    <!-- Tasks -->
+    <string name="tasks">Задачи</string>
+    <string name="add_task">Додај задача</string>
+    <string name="edit_task">Уреди задача</string>
+    <string name="task_title">Наслов на задача</string>
+    <string name="task_description">Опис (незадолжително)</string>
+    <string name="task_subject">Предмет</string>
+    <string name="task_due_date">Краен рок</string>
+    <string name="task_due_time">Час на рок</string>
+    <string name="task_priority">Приоритет</string>
+    <string name="task_type">Тип на задача</string>
+    <string name="task_completed">Завршена</string>
+    <string name="task_pending">Во тек</string>
+    <string name="task_overdue">Задоцнета</string>
+    <string name="delete_task">Избриши задача</string>
+    <string name="mark_complete">Означи како завршена</string>
+    <string name="mark_incomplete">Означи како незавршена</string>
+    <string name="no_tasks">Нема задачи. Додајте ја вашата прва задача!</string>
+    <string name="filter_all">Сите</string>
+    <string name="filter_today">Денес</string>
+    <string name="filter_week">Оваа недела</string>
+    <string name="filter_completed">Завршени</string>
+    <string name="filter_overdue">Задоцнети</string>
+    <string name="sync_tasks">Синхронизирај со облакот</string>
+    <string name="task_reminder">Потсети ме</string>
+    <string name="task_notes">Белешки</string>
+    <string name="task_saved">Задачата е зачувана</string>
+    <string name="task_deleted">Задачата е избришана</string>
+    <string name="task_completed_msg">Браво! Задачата е завршена! 🎉</string>
+
+    <!-- Priority levels -->
+    <string name="priority_low">Низок</string>
+    <string name="priority_medium">Среден</string>
+    <string name="priority_high">Висок</string>
+    <string name="priority_critical">Критичен</string>
+
+    <!-- Task types -->
+    <string name="type_homework">Домашна задача</string>
+    <string name="type_project">Проект</string>
+    <string name="type_reading">Читање</string>
+    <string name="type_assignment">Есеј/Реферат</string>
+    <string name="type_lab">Лабораториска вежба</string>
+    <string name="type_other">Друго</string>
+
+    <!-- Subjects -->
+    <string name="subjects">Предмети</string>
+    <string name="add_subject">Додај предмет</string>
+    <string name="edit_subject">Уреди предмет</string>
+    <string name="subject_name">Назив на предмет</string>
+    <string name="subject_code">Код на предмет</string>
+    <string name="subject_professor">Професор</string>
+    <string name="subject_credits">Кредити (ECTS)</string>
+    <string name="subject_color">Боја</string>
+    <string name="subject_room">Сала / Локација</string>
+    <string name="subject_schedule">Распоред</string>
+    <string name="no_subjects">Нема предмети. Додајте го вашиот прв предмет!</string>
+    <string name="subject_tasks_count">%1$d задачи</string>
+    <string name="subject_saved">Предметот е зачуван</string>
+    <string name="delete_subject">Избриши предмет</string>
+    <string name="subject_details">Детали за предмет</string>
+    <string name="active_tasks">Активни задачи</string>
+    <string name="completed_tasks">Завршени задачи</string>
+    <string name="upcoming_exams">Претстојни испити</string>
+
+    <!-- Exams -->
+    <string name="exams">Испити</string>
+    <string name="add_exam">Додај испит</string>
+    <string name="edit_exam">Уреди испит</string>
+    <string name="exam_title">Наслов на испит</string>
+    <string name="exam_subject">Предмет</string>
+    <string name="exam_date">Датум на испит</string>
+    <string name="exam_time">Час на испит</string>
+    <string name="exam_location">Локација / Сала</string>
+    <string name="exam_notes">Белешки</string>
+    <string name="exam_duration">Времетраење (минути)</string>
+    <string name="exam_type">Тип на испит</string>
+    <string name="no_exams">Нема закажани испити.</string>
+    <string name="exam_upcoming">Претстоечки</string>
+    <string name="exam_passed">Поминат</string>
+    <string name="exam_in_days">За %1$d дена</string>
+    <string name="exam_tomorrow">Утре!</string>
+    <string name="exam_today">Денес!</string>
+    <string name="exam_saved">Испитот е зачуван</string>
+    <string name="delete_exam">Избриши испит</string>
+
+    <!-- Exam types -->
+    <string name="exam_type_written">Писмен</string>
+    <string name="exam_type_oral">Усмен</string>
+    <string name="exam_type_practical">Практичен</string>
+    <string name="exam_type_online">Онлајн</string>
+
+    <!-- Profile -->
+    <string name="profile">Профил</string>
+    <string name="edit_profile">Уреди профил</string>
+    <string name="display_name">Прикажано ime</string>
+    <string name="university">Универзитет</string>
+    <string name="faculty">Факултет</string>
+    <string name="year_of_study">Година на студии</string>
+    <string name="change_language">Промени јазик</string>
+    <string name="notifications_settings">Поставки за известувања</string>
+    <string name="dark_mode">Темна тема</string>
+    <string name="account_settings">Поставки на акаунт</string>
+    <string name="app_version">Верзија на апликација</string>
+    <string name="logout_confirm_title">Одјава</string>
+    <string name="logout_confirm_message">Дали сте сигурни дека сакате да се одјавите?</string>
+    <string name="anonymous_user">Анонимен корисник</string>
+    <string name="link_account">Поврзи акаунт</string>
+    <string name="profile_saved">Профилот е ажуриран</string>
+
+    <!-- Statistics -->
+    <string name="statistics">Статистика</string>
+    <string name="total_tasks">Вкупно задачи</string>
+    <string name="completed_percentage">Процент на завршување</string>
+    <string name="streak_days">Денови по ред</string>
+    <string name="subjects_count">Предмети</string>
+
+    <!-- Common -->
+    <string name="save">Зачувај</string>
+    <string name="cancel">Откажи</string>
+    <string name="delete">Избриши</string>
+    <string name="confirm">Потврди</string>
+    <string name="loading">Се вчитува…</string>
+    <string name="error_generic">Нешто тргна наопаку. Обидете се повторно.</string>
+    <string name="error_network">Нема интернет конекција.</string>
+    <string name="error_auth">Автентикацијата не успеа. Обидете се повторно.</string>
+    <string name="error_empty_field">Ова поле не може да биде празно.</string>
+    <string name="error_invalid_email">Внесете валидна е-пошта адреса.</string>
+    <string name="error_password_short">Лозинката мора да има најмалку 6 знаци.</string>
+    <string name="error_passwords_mismatch">Лозинките не се совпаѓаат.</string>
+    <string name="success">Успешно</string>
+    <string name="retry">Обиди се повторно</string>
+    <string name="select_date">Избери датум</string>
+    <string name="select_time">Избери час</string>
+    <string name="sync_success">Успешно синхронизирано</string>
+    <string name="sync_failed">Синхронизацијата не успеа. Податоците се зачувани локално.</string>
+    <string name="offline_mode">Офлајн режим – податоците се зачувани локално</string>
+    <string name="confirm_delete_title">Потврди бришење</string>
+    <string name="confirm_delete_message">Дали сте сигурни дека сакате да го избришете ова?</string>
+    <string name="search_hint">Пребарај…</string>
+    <string name="no_results">Нема резултати.</string>
+    <string name="select_subject">Избери предмет</string>
+    <string name="add_new">Додај ново</string>
+    <string name="language_english">English</string>
+    <string name="language_macedonian">Македонски</string>
+
+    <!-- Notifications -->
+    <string name="notif_task_due_title">Рокот се приближува</string>
+    <string name="notif_task_due_body">Задачата \"%1$s\" е закажана за %2$s</string>
+    <string name="notif_exam_reminder_title">Потсетник за испит</string>
+    <string name="notif_exam_reminder_body">Испитот \"%1$s\" е %2$s</string>
+    <string name="remind_1_hour">1 час пред</string>
+    <string name="remind_3_hours">3 часа пред</string>
+    <string name="remind_1_day">1 ден пред</string>
+    <string name="remind_2_days">2 дена пред</string>
+    <string name="remind_1_week">1 недела пред</string>
+    <string name="remind_none">Без потсетник</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Организирај ги студиите</string>
+    <string name="onboarding_desc_1">Следи ги сите предмети, задачи и испити на едно место.</string>
+    <string name="onboarding_title_2">Не пропуштај рок</string>
+    <string name="onboarding_desc_2">Добивај паметни потсетници пред задачите и испитите.</string>
+    <string name="onboarding_title_3">Синхронизирај секаде</string>
+    <string name="onboarding_desc_3">Твоите податоци се синхронизираат на сите уреди преку Firebase.</string>
+    <string name="get_started">Почни</string>
+    <string name="next">Следно</string>
+    <string name="skip">Прескокни</string>
+</resources>

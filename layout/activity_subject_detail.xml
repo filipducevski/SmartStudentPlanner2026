@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.SmartStudent.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="@dimen/spacing_md"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Subject Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSubjectName"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/subject_name"
+                app:startIconDrawable="@drawable/ic_subjects">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSubjectName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Code -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSubjectCode"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:hint="@string/subject_code">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSubjectCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Professor -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilProfessor"
+                style="@style/Widget.SmartStudent.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:hint="@string/subject_professor"
+                app:startIconDrawable="@drawable/ic_profile">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProfessor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Credits + Room row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="@dimen/spacing_md">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCredits"
+                    style="@style/Widget.SmartStudent.TextInputLayout"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:hint="@string/subject_credits">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCredits"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRoomLocation"
+                    style="@style/Widget.SmartStudent.TextInputLayout"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:hint="@string/subject_room"
+                    app:startIconDrawable="@drawable/ic_location">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRoomLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- Color picker section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/subject_color"
+                android:textAppearance="@style/TextAppearance.SmartStudent.Caption"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:layout_marginBottom="@dimen/spacing_sm" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+
+                <View android:id="@+id/viewColorPreview"
+                    android:layout_width="40dp" android:layout_height="40dp"
+                    android:background="@drawable/bg_circle" />
+
+                <TextView android:id="@+id/tvSelectedColor"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="@dimen/spacing_md"
+                    android:textAppearance="@style/TextAppearance.SmartStudent.Caption" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickColor"
+                    style="@style/Widget.SmartStudent.Button.Outlined"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/subject_color"
+                    app:icon="@drawable/ic_subjects" />
+            </LinearLayout>
+
+            <!-- Progress bar -->
+            <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_md" android:visibility="gone" />
+
+            <!-- Save button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/Widget.SmartStudent.Button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:text="@string/save"
+                android:textSize="@dimen/text_lg" />
+
+            <!-- Delete button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.SmartStudent.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:text="@string/delete_subject"
+                app:strokeColor="@color/error"
+                android:textColor="@color/error"
+                android:visibility="gone" />
+
+            <Space android:layout_width="match_parent" android:layout_height="32dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

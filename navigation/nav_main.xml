@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.smartstudent.planner.ui.dashboard.DashboardFragment"
+        android:label="@string/nav_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+
+    <!-- Tasks -->
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.smartstudent.planner.ui.tasks.TasksFragment"
+        android:label="@string/nav_tasks"
+        tools:layout="@layout/fragment_tasks">
+        <action
+            android:id="@+id/action_tasksFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Task Detail (Activity, referenced as deep link destination) -->
+    <activity
+        android:id="@+id/taskDetailFragment"
+        android:name="com.smartstudent.planner.ui.tasks.TaskDetailActivity"
+        android:label="@string/add_task" />
+
+    <!-- Subjects -->
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="com.smartstudent.planner.ui.subjects.SubjectsFragment"
+        android:label="@string/nav_subjects"
+        tools:layout="@layout/fragment_subjects" />
+
+    <!-- Exams -->
+    <fragment
+        android:id="@+id/examsFragment"
+        android:name="com.smartstudent.planner.ui.exams.ExamsFragment"
+        android:label="@string/nav_exams"
+        tools:layout="@layout/fragment_exams" />
+
+    <!-- Profile -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.smartstudent.planner.ui.profile.ProfileFragment"
+        android:label="@string/nav_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
